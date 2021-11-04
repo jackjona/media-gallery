@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Video Gallery</title>
+    <meta name="description" content="Video Gallery Website">
+    <link rel="icon" type="image/svg+xml" href="https://alt.jackjona.ga/favicon.svg">
+    <link rel="apple-touch-icon" sizes="180x180" href="https://alt.jackjona.ga/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://alt.jackjona.ga/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://alt.jackjona.ga/favicon-16x16.png">
+    <link rel="stylesheet" href="https://cdn.plyr.io/3.6.9/plyr.css" />
+  </head>
+  <style>
+    * {
+      background-color: #121212;
+      text-align: center;
+      align-items: center;
+      justify-content: center;
+      padding: 10px;
+    }
+
+    h1,
+    h2,
+    h3 {
+      color: white;
+      font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+        "Lucida Sans", Arial, sans-serif;
+    }
+
+    video {
+      width: 480px;
+      height: 320px;
+    }
+
+    .video-div {
+      border-radius: 10px;
+    }
+
+    @media only screen and (max-width: 420px) {
+      * {
+        background-color: #000000;
+        max-width: 410px;
+        overflow-x: hidden;
+        padding-left: 8px;
+      }
+
+      video {
+        width: 330px;
+        height: 180px;
+      }
+    }
+
+    @media only screen and (max-width: 380px) {
+      * {
+        background-color: #000000;
+        max-width: 370px;
+        padding-left: 5px;
+        overflow-x: hidden;
+      }
+
+      video {
+        width: 360px;
+        height: 250px;
+      }
+    }
+  </style>
+  <body>
+    <br />
+    <h1>Video Gallary</h1>
+    <div class="video-container">
+      <!--Video-->
+      <div class="video-div">
+        <video id="lake" poster="https://cdn.jsdelivr.net/gh/jackjona123/video-gallery@original/thumbnails/lake.jpg" controls loop>Your browser does not support the video tag.</video>
+        <video id="sheep" poster="https://cdn.jsdelivr.net/gh/jackjona123/video-gallery@original/thumbnails/sheep.jpg" controls loop>Your browser does not support the video tag.</video>
+        <video id="cow" poster="https://cdn.jsdelivr.net/gh/jackjona123/video-gallery@original/thumbnails/cow.jpg" controls loop>Your browser does not support the video tag.</video>
+        <video id="skyscraper" poster="https://raw.githubusercontent.com/jackjona123/video-gallery/original/thumbnails/syscraper.jpg" controls loop>Your browser does not support the video tag.</video>
+        <video id="disc" poster="https://cdn.jsdelivr.net/gh/jackjona123/video-gallery@original/thumbnails/disc.jpg" controls loop>Your browser does not support the video tag.</video>
+        <video id="puppies" poster="https://cdn.jsdelivr.net/gh/jackjona123/video-gallery@original/thumbnails/puppies.jpg" controls loop>Your browser does not support the video tag.</video>
+        <video id="waves" poster="https://cdn.jsdelivr.net/gh/jackjona123/video-gallery@original/thumbnails/waves.jpg" controls loop>Your browser does not support the video tag.</video>
+        <video id="koala" poster="https://cdn.jsdelivr.net/gh/jackjona123/video-gallery@original/thumbnails/koala.jpg" controls loop>Your browser does not support the video tag.</video>
+        <video id="fountain" poster="https://cdn.jsdelivr.net/gh/jackjona123/video-gallery@original/thumbnails/fountain.jpg" controls loop>Your browser does not support the video tag.</video>
+        <video id="lemon" poster="https://cdn.jsdelivr.net/gh/jackjona123/video-gallery@original/thumbnails/lemon.jpg" controls loop>Your browser does not support the video tag.</video>
+        <video id="ink" poster="https://cdn.jsdelivr.net/gh/jackjona123/video-gallery@original/thumbnails/ink.jpg" controls loop>Your browser does not support the video tag.</video>
+        <video id="dolby" poster="https://cdn.jsdelivr.net/gh/jackjona123/video-gallery@original/thumbnails/dolby.jpg" controls loop>Your browser does not support the video tag.</video>
+        <video id="meditation" poster="https://cdn.jsdelivr.net/gh/jackjona123/video-gallery@original/thumbnails/meditation.jpg" controls loop>Your browser does not support the video tag.</video>
+        <video id="retro" poster="https://cdn.jsdelivr.net/gh/jackjona123/video-gallery@original/thumbnails/retro.jpg" controls loop>Your browser does not support the video tag.</video>
+        <video id="river" poster="https://cdn.jsdelivr.net/gh/jackjona123/video-gallery@original/thumbnails/river.jpg" controls loop>Your browser does not support the video tag.</video>
+      </div>
+      
+      <!--Audio-->
+      <div clas="audio-div">
+        <audio preload="true" id="pinkpanther" controls crossorigin>Your browser does not support the audio tag.</audio>
+        <audio preload="true" id="passacaglia" controls crossorigin>Your browser does not support the audio tag.</audio>
+        <audio preload="true" id="soundscape" controls crossorigin>Your browser does not support the audio tag.</audio>
+        <audio preload="true" id="swanlake" controls crossorigin>Your browser does not support the audio tag.</audio>
+        <audio preload="true" id="lacrimosa" controls crossorigin>Your browser does not support the audio tag.</audio>
+        <audio preload="true" id="pathetique" controls crossorigin>Your browser does not support the audio tag.</audio>
+        <audio preload="true" id="canon-d" controls crossorigin>Your browser does not support the audio tag.</audio>
+        <audio preload="true" id="gminor" controls crossorigin>Your browser does not support the audio tag.</audio>
+        <audio preload="true" id="nocturne-eflatmaj" controls crossorigin>Your browser does not support the audio tag.</audio>
+      </div>
+    </div>
+    <!--Scripts-->
+    <script src="https://cdn.plyr.io/3.6.9/plyr.js"></script>
+    <script src="https://cdn.jsdelivr.net/hls.js/latest/hls.js"></script>
+    <script>
+      var video = document.getElementById('lake');
+      var videoSrc = 'https://cdn.jsdelivr.net/gh/jackjona123/video-gallery@original/lake/lake.m3u8';
+      if (Hls.isSupported()) {
+        var hls = new Hls();
+        hls.loadSource(videoSrc);
+        hls.attachMedia(video);
+      } else if (video.canPlayType('application/vnd.apple.mpegurl')) {
+        video.src = videoSrc;
+      }
+    </script>
+    <script>
+      var video = document.getElementById('sheep');
+      var videoSrc = 'https://cdn.jsdelivr.net/gh/jackjona123/video-gallery@original/sheep/sheep.m3u8';
+      if (Hls.isSupported()) {
+        var hls = new Hls();
+        hls.loadSource(videoSrc);
+        hls.attachMedia(video);
+      } else if (video.canPlayType('application/vnd.apple.mpegurl')) {
+        video.src = videoSrc;
+      }
+    </script>
+    <script>
+      var video = document.getElementById('cow');
+      var videoSrc = 'https://cdn.jsdelivr.net/gh/jackjona123/video-gallery@original/cow/cow.m3u8';
+      if (Hls.isSupported()) {
+        var hls = new Hls();
+        hls.loadSource(videoSrc);
+        hls.attachMedia(video);
+      } else if (video.canPlayType('application/vnd.apple.mpegurl')) {
+        video.src = videoSrc;
+      }
+    </script>
+    <script>
+      var video = document.getElementById('skyscraper');
+      var videoSrc = 'https://cdn.jsdelivr.net/gh/jackjona123/video-gallery@original/skyscraper/skyscraper.m3u8';
+      if (Hls.isSupported()) {
+        var hls = new Hls();
+        hls.loadSource(videoSrc);
+        hls.attachMedia(video);
+      } else if (video.canPlayType('application/vnd.apple.mpegurl')) {
+        video.src = videoSrc;
+      }
+    </script>
+    <script>
+      var video = document.getElementById('disc');
+      var videoSrc = 'https://cdn.jsdelivr.net/gh/jackjona123/video-gallery@original/disc/disc.m3u8';
+      if (Hls.isSupported()) {
+        var hls = new Hls();
+        hls.loadSource(videoSrc);
+        hls.attachMedia(video);
+      } else if (video.canPlayType('application/vnd.apple.mpegurl')) {
+        video.src = videoSrc;
+      }
+    </script>
+    <script>
+      var video = document.getElementById('puppies');
+      var videoSrc = 'https://cdn.jsdelivr.net/gh/jackjona123/video-gallery@original/puppies/puppies.m3u8';
+      if (Hls.isSupported()) {
+        var hls = new Hls();
+        hls.loadSource(videoSrc);
+        hls.attachMedia(video);
+      } else if (video.canPlayType('application/vnd.apple.mpegurl')) {
+        video.src = videoSrc;
+      }
+    </script>
+    <script>
+      var video = document.getElementById('waves');
+      var videoSrc = 'https://raw.githubusercontent.com/jackjona123/video-gallery/original/waves/waves.m3u8';
+      if (Hls.isSupported()) {
+        var hls = new Hls();
+        hls.loadSource(videoSrc);
+        hls.attachMedia(video);
+      } else if (video.canPlayType('application/vnd.apple.mpegurl')) {
+        video.src = videoSrc;
+      }
+    </script>
+    <script>
+      var video = document.getElementById('koala');
+      var videoSrc = 'https://cdn.jsdelivr.net/gh/jackjona123/video-gallery@original/koala/koala.m3u8';
+      if (Hls.isSupported()) {
+        var hls = new Hls();
+        hls.loadSource(videoSrc);
+        hls.attachMedia(video);
+      } else if (video.canPlayType('application/vnd.apple.mpegurl')) {
+        video.src = videoSrc;
+      }
+    </script>
+    <script>
+      var video = document.getElementById('fountain');
+      var videoSrc = 'https://raw.githubusercontent.com/jackjona123/video-gallery/original/fountain/fountain.m3u8';
+      if (Hls.isSupported()) {
+        var hls = new Hls();
+        hls.loadSource(videoSrc);
+        hls.attachMedia(video);
+      } else if (video.canPlayType('application/vnd.apple.mpegurl')) {
+        video.src = videoSrc;
+      }
+    </script>
+    <script>
+      var video = document.getElementById('lemon');
+      var videoSrc = 'https://cdn.jsdelivr.net/gh/jackjona123/video-gallery@original/lemon/lemon.m3u8';
+      if (Hls.isSupported()) {
+        var hls = new Hls();
+        hls.loadSource(videoSrc);
+        hls.attachMedia(video);
+      } else if (video.canPlayType('application/vnd.apple.mpegurl')) {
+        video.src = videoSrc;
+      }
+    </script>
+    <script>
+      var video = document.getElementById('ink');
+      var videoSrc = 'https://cdn.jsdelivr.net/gh/jackjona123/video-gallery@original/ink/ink.m3u8';
+      if (Hls.isSupported()) {
+        var hls = new Hls();
+        hls.loadSource(videoSrc);
+        hls.attachMedia(video);
+      } else if (video.canPlayType('application/vnd.apple.mpegurl')) {
+        video.src = videoSrc;
+      }
+    </script>
+    <script>
+      var video = document.getElementById('dolby');
+      var videoSrc = 'https://cdn.jsdelivr.net/gh/jackjona123/video-gallery@original/dolby/dolby.m3u8';
+      if (Hls.isSupported()) {
+        var hls = new Hls();
+        hls.loadSource(videoSrc);
+        hls.attachMedia(video);
+      } else if (video.canPlayType('application/vnd.apple.mpegurl')) {
+        video.src = videoSrc;
+      }
+    </script>
+    <script>
+      var video = document.getElementById('meditation');
+      var videoSrc = 'https://cdn.jsdelivr.net/gh/jackjona123/video-gallery@original/meditation/meditation.m3u8';
+      if (Hls.isSupported()) {
+        var hls = new Hls();
+        hls.loadSource(videoSrc);
+        hls.attachMedia(video);
+      } else if (video.canPlayType('application/vnd.apple.mpegurl')) {
+        video.src = videoSrc;
+      }
+    </script>
+    <script>
+      var video = document.getElementById('retro');
+      var videoSrc = 'https://cdn.jsdelivr.net/gh/jackjona123/video-gallery@original/retro/retro.m3u8';
+      if (Hls.isSupported()) {
+        var hls = new Hls();
+        hls.loadSource(videoSrc);
+        hls.attachMedia(video);
+      } else if (video.canPlayType('application/vnd.apple.mpegurl')) {
+        video.src = videoSrc;
+      }
+    </script>
+    <script>
+      var video = document.getElementById('river');
+      var videoSrc = 'https://cdn.jsdelivr.net/gh/jackjona123/video-gallery@original/river/river.m3u8';
+      if (Hls.isSupported()) {
+        var hls = new Hls();
+        hls.loadSource(videoSrc);
+        hls.attachMedia(video);
+      } else if (video.canPlayType('application/vnd.apple.mpegurl')) {
+        video.src = videoSrc;
+      }
+    </script>
+    <script>
+      var video = document.getElementById('pinkpanther');
+      var videoSrc = 'https://cdn.jsdelivr.net/gh/jackjona123/video-gallery@original/pink-panther/pinkpanther.m3u8';
+      if (Hls.isSupported()) {
+        var hls = new Hls();
+        hls.loadSource(videoSrc);
+        hls.attachMedia(video);
+      } else if (video.canPlayType('application/vnd.apple.mpegurl')) {
+        video.src = videoSrc;
+      }
+    </script>
+    <script>
+      (function() {
+        var audio = document.querySelector('#pinkpanther');
+        if (Hls.isSupported()) {
+          var hls = new Hls();
+          hls.loadSource('https://cdn.jsdelivr.net/gh/jackjona123/video-gallery@original/pink-panther/pinkpanther.m3u8');
+          hls.attachMedia(audio);
+        }
+        plyr.setup(audio);
+      })();
+    </script>
+    <script>
+      (function() {
+        var audio = document.querySelector('#passacaglia');
+        if (Hls.isSupported()) {
+          var hls = new Hls();
+          hls.loadSource('https://cdn.jsdelivr.net/gh/jackjona123/video-gallery@original/passacaglia/passacaglia.m3u8');
+          hls.attachMedia(audio);
+        }
+        plyr.setup(audio);
+      })();
+    </script>
+    <script>
+      (function() {
+        var audio = document.querySelector('#soundscape');
+        if (Hls.isSupported()) {
+          var hls = new Hls();
+          hls.loadSource('https://cdn.jsdelivr.net/gh/jackjona123/video-gallery@original/soundscape/soundscape.m3u8');
+          hls.attachMedia(audio);
+        }
+        plyr.setup(audio);
+      })();
+    </script>
+    <script>
+      (function() {
+        var audio = document.querySelector('#swanlake');
+        if (Hls.isSupported()) {
+          var hls = new Hls();
+          hls.loadSource('https://cdn.jsdelivr.net/gh/jackjona123/video-gallery@original/swanlake/swanlake.m3u8');
+          hls.attachMedia(audio);
+        }
+        plyr.setup(audio);
+      })();
+    </script>
+    <script>
+      (function() {
+        var audio = document.querySelector('#lacrimosa');
+        if (Hls.isSupported()) {
+          var hls = new Hls();
+          hls.loadSource('https://cdn.jsdelivr.net/gh/jackjona123/video-gallery@original/lacrimosa/lacrimosa.m3u8');
+          hls.attachMedia(audio);
+        }
+        plyr.setup(audio);
+      })();
+    </script>
+    <script>
+      (function() {
+        var audio = document.querySelector('#pathetique');
+        if (Hls.isSupported()) {
+          var hls = new Hls();
+          hls.loadSource('https://cdn.jsdelivr.net/gh/jackjona123/video-gallery@original/pathetique/pathetique.m3u8');
+          hls.attachMedia(audio);
+        }
+        plyr.setup(audio);
+      })();
+    </script>
+    <script>
+      (function() {
+        var audio = document.querySelector('#canon-d');
+        if (Hls.isSupported()) {
+          var hls = new Hls();
+          hls.loadSource('https://cdn.jsdelivr.net/gh/jackjona123/video-gallery@original/canon-d/canon-d.m3u8');
+          hls.attachMedia(audio);
+        }
+        plyr.setup(audio);
+      })();
+    </script>
+    <script>
+      (function() {
+        var audio = document.querySelector('#gminor');
+        if (Hls.isSupported()) {
+          var hls = new Hls();
+          hls.loadSource('https://cdn.jsdelivr.net/gh/jackjona123/video-gallery@original/gminor/gminor.m3u8');
+          hls.attachMedia(audio);
+        }
+        plyr.setup(audio);
+      })();
+    </script>
+    <script>
+      (function() {
+        var audio = document.querySelector('#nocturne-eflatmaj');
+        if (Hls.isSupported()) {
+          var hls = new Hls();
+          hls.loadSource('https://cdn.jsdelivr.net/gh/jackjona123/video-gallery@original/nocturne-eflatmaj/nocturne-eflatmaj.m3u8');
+          hls.attachMedia(audio);
+        }
+        plyr.setup(audio);
+      })();
+    </script>
+    <script>
+      console.log(":)")
+    </script>
+  </body>
+</html>
