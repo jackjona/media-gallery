@@ -1,4 +1,4 @@
-# Video Gallary - Assets
+# Video Gallery - Assets
 
 ## This branch hosts all the main assets.
 
