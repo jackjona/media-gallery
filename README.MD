@@ -4,7 +4,7 @@
 
 A simple video gallery website built in pure HTML, CSS, and JS using HLS.JS.
 
-## View The Live Site [Here](https://media.jjcdn.ga)
+## View All The Assets [Here](https://media.jjcdn.ga)
 
 ## Software
 
