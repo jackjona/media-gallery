@@ -2,8 +2,6 @@
 
 A simple video gallery website built in pure HTML, CSS, and JS using JWPlayer.
 
-## View The Live Site [Here](https://jackjona123.github.io/video-gallery/)
-
 ## Software
 
 - HTML
