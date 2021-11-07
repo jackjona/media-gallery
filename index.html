@@ -12,13 +12,6 @@
   </head>
   <body>
     <h1>Video Gallery</h1>
-    
-    <div class="video-wrapper">
-      <video preload="none" id="tearsofsteel" autostart="false" controls crossorigin poster="https://media-gallery.vercel.app/thumbnails/tearsofsteel.jpg">Your browser does not support the video tag.</video>
-    </div>
-    <div class="video-wrapper">
-      <video preload="none" id="bunny" autostart="false" controls crossorigin poster="https://media-gallery.vercel.app/thumbnails/bunny.jpg">Your browser does not support the video tag.</video>
-    </div>
     <div class="video-wrapper">
       <video preload="none" id="lake" autostart="false" controls crossorigin poster="https://media-gallery.vercel.app/thumbnails/lake.jpg">Your browser does not support the video tag.</video>
     </div>
@@ -64,6 +57,12 @@
     <div class="video-wrapper">
       <video preload="none" id="river" autostart="false" controls crossorigin poster="https://media-gallery.vercel.app/thumbnails/river.jpg">Your browser does not support the video tag.</video>
     </div>
+    <div class="video-wrapper">
+      <video preload="none" id="tearsofsteel" autostart="false" controls crossorigin poster="https://media-gallery.vercel.app/thumbnails/tearsofsteel.jpg">Your browser does not support the video tag.</video>
+    </div>
+    <div class="video-wrapper">
+      <video preload="none" id="bunny" autostart="false" controls crossorigin poster="https://media-gallery.vercel.app/thumbnails/bunny.jpg">Your browser does not support the video tag.</video>
+    </div>
     <!--Import Scripts-->
     <script src="https://cdn.plyr.io/3.6.9/plyr.js"></script>
     <script src="https://cdn.jsdelivr.net/hls.js/latest/hls.js"></script>
@@ -73,34 +72,6 @@
       window.players = players;
     </script>
     <!--Video HLS Video Load Scripts-->
-    <script>
-      (function() {
-        var video = document.querySelector('#tearsofsteel');
-        if (Hls.isSupported()) {
-          var hls = new Hls();
-          hls.loadSource('https://content.jwplatform.com/manifests/vM7nH0Kl.m3u8');
-          hls.attachMedia(video);
-          hls.on(Hls.Events.MANIFEST_PARSED, function() {
-            video.play();
-          });
-        }
-        plyr.setup(video);
-      })();
-    </script>
-    <script>
-      (function() {
-        var video = document.querySelector('#bunny');
-        if (Hls.isSupported()) {
-          var hls = new Hls();
-          hls.loadSource('https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8');
-          hls.attachMedia(video);
-          hls.on(Hls.Events.MANIFEST_PARSED, function() {
-            video.play();
-          });
-        }
-        plyr.setup(video);
-      })();
-    </script>
     <script>
       (function() {
         var video = document.querySelector('#lake');
@@ -303,6 +274,34 @@
         if (Hls.isSupported()) {
           var hls = new Hls();
           hls.loadSource('https://media-gallery.vercel.app/hls/river/river.m3u8');
+          hls.attachMedia(video);
+          hls.on(Hls.Events.MANIFEST_PARSED, function() {
+            video.play();
+          });
+        }
+        plyr.setup(video);
+      })();
+    </script>
+    <script>
+      (function() {
+        var video = document.querySelector('#tearsofsteel');
+        if (Hls.isSupported()) {
+          var hls = new Hls();
+          hls.loadSource('https://content.jwplatform.com/manifests/vM7nH0Kl.m3u8');
+          hls.attachMedia(video);
+          hls.on(Hls.Events.MANIFEST_PARSED, function() {
+            video.play();
+          });
+        }
+        plyr.setup(video);
+      })();
+    </script>
+    <script>
+      (function() {
+        var video = document.querySelector('#bunny');
+        if (Hls.isSupported()) {
+          var hls = new Hls();
+          hls.loadSource('https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8');
           hls.attachMedia(video);
           hls.on(Hls.Events.MANIFEST_PARSED, function() {
             video.play();
