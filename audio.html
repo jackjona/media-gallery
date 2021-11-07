@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Audio Gallery</title>
+    <meta name="description" content="Audio Gallery Website">
+    <link rel="icon" type="image/svg+xml" href="https://alt.jackjona.ga/favicon.svg">
+    <link rel="stylesheet" href="https://cdn.plyr.io/3.6.9/plyr.css">
+    <link rel="stylesheet" href="index.css">
+  </head>
+  <body>
+    <h1>Audio Gallery</h1>
+    <div class="audio-wrapper">
+      <audio class="media-player" id="pinkpanther" controls crossorigin>Your browser does not support the audio tag.</audio>
+    </div>
+    <div class="audio-wrapper">
+      <audio class="media-player" id="passacaglia" controls crossorigin>Your browser does not support the audio tag.</audio>
+    </div>
+    <div class="audio-wrapper">
+      <audio class="media-player" id="soundscape" controls crossorigin>Your browser does not support the audio tag.</audio>
+    </div>
+    <div class="audio-wrapper">
+      <audio class="media-player" id="swanlake" controls crossorigin>Your browser does not support the audio tag.</audio>
+    </div>
+    <div class="audio-wrapper">
+      <audio class="media-player" id="lacrimosa" controls crossorigin>Your browser does not support the audio tag.</audio>
+    </div>
+    <div class="audio-wrapper">
+      <audio class="media-player" id="pathetique" controls crossorigin>Your browser does not support the audio tag.</audio>
+    </div>
+    <div class="audio-wrapper">
+      <audio class="media-player" id="canon-d" controls crossorigin>Your browser does not support the audio tag.</audio>
+    </div>
+    <div class="audio-wrapper">
+      <audio class="media-player" id="gminor" controls crossorigin>Your browser does not support the audio tag.</audio>
+    </div>
+    <div class="audio-wrapper">
+      <audio class="media-player" id="nocturne-eflatmaj" controls crossorigin>Your browser does not support the audio tag.</audio>
+    </div>
+    <!--Scripts-->
+    <script src="https://cdn.plyr.io/3.6.9/plyr.js"></script>
+    <script src="https://cdn.jsdelivr.net/hls.js/latest/hls.js"></script>
+    <script>
+      const players = Plyr.setup('.media-player');
+      window.players = players;
+    </script>
+    <script>
+      (function() {
+        var audio = document.querySelector('#pinkpanther');
+        if (Hls.isSupported()) {
+          var hls = new Hls();
+          hls.loadSource('https://media-gallery.vercel.app/hls/pink-panther/pinkpanther.m3u8');
+          hls.attachMedia(audio);
+        }
+        plyr.setup(audio);
+      })();
+    </script>
+    <script>
+      (function() {
+        var audio = document.querySelector('#passacaglia');
+        if (Hls.isSupported()) {
+          var hls = new Hls();
+          hls.loadSource('https://media-gallery.vercel.app/hls/passacaglia/passacaglia.m3u8');
+          hls.attachMedia(audio);
+        }
+        plyr.setup(audio);
+      })();
+    </script>
+    <script>
+      (function() {
+        var audio = document.querySelector('#soundscape');
+        if (Hls.isSupported()) {
+          var hls = new Hls();
+          hls.loadSource('https://media-gallery.vercel.app/hls/soundscape/soundscape.m3u8');
+          hls.attachMedia(audio);
+        }
+        plyr.setup(audio);
+      })();
+    </script>
+    <script>
+      (function() {
+        var audio = document.querySelector('#swanlake');
+        if (Hls.isSupported()) {
+          var hls = new Hls();
+          hls.loadSource('https://media-gallery.vercel.app/hls/swanlake/swanlake.m3u8');
+          hls.attachMedia(audio);
+        }
+        plyr.setup(audio);
+      })();
+    </script>
+    <script>
+      (function() {
+        var audio = document.querySelector('#lacrimosa');
+        if (Hls.isSupported()) {
+          var hls = new Hls();
+          hls.loadSource('https://media-gallery.vercel.app/hls/lacrimosa/lacrimosa.m3u8');
+          hls.attachMedia(audio);
+        }
+        plyr.setup(audio);
+      })();
+    </script>
+    <script>
+      (function() {
+        var audio = document.querySelector('#pathetique');
+        if (Hls.isSupported()) {
+          var hls = new Hls();
+          hls.loadSource('https://media-gallery.vercel.app/hls/pathetique/pathetique.m3u8');
+          hls.attachMedia(audio);
+        }
+        plyr.setup(audio);
+      })();
+    </script>
+    <script>
+      (function() {
+        var audio = document.querySelector('#canon-d');
+        if (Hls.isSupported()) {
+          var hls = new Hls();
+          hls.loadSource('https://media-gallery.vercel.app/hls/canon-d/canon-d.m3u8');
+          hls.attachMedia(audio);
+        }
+        plyr.setup(audio);
+      })();
+    </script>
+    <script>
+      (function() {
+        var audio = document.querySelector('#gminor');
+        if (Hls.isSupported()) {
+          var hls = new Hls();
+          hls.loadSource('https://media-gallery.vercel.app/hls/gminor/gminor.m3u8');
+          hls.attachMedia(audio);
+        }
+        plyr.setup(audio);
+      })();
+    </script>
+    <script>
+      (function() {
+        var audio = document.querySelector('#nocturne-eflatmaj');
+        if (Hls.isSupported()) {
+          var hls = new Hls();
+          hls.loadSource('https://media-gallery.vercel.app/hls/nocturne-eflatmaj/nocturne-eflatmaj.m3u8');
+          hls.attachMedia(audio);
+        }
+        plyr.setup(audio);
+      })();
+    </script>
+  </body>
+</html>
