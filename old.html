@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Video Gallery</title>
+    <meta name="description" content="Video Gallery Website">
+    <link rel="icon" type="image/svg+xml" href="https://media-gallery.vercel.app/favicon.svg">
+    <link rel="apple-touch-icon" href="https://media-gallery.vercel.app/apple-touch-icon.png">
+    <link rel="stylesheet" href="https://cdn.plyr.io/3.6.9/plyr.css">
+    <link rel="stylesheet" href="index.css">
+  </head>
+  <body>
+    <h1>Video Gallery</h1>
+    <div class="video-wrapper">
+      <video preload="none" id="lake" muted="true" autostart="false" controls crossorigin poster="https://media-gallery.vercel.app/thumbnails/lake.jpg">Your browser does not support the video tag.</video>
+    </div>
+    <div class="video-wrapper">
+      <video preload="none" id="sheep" muted="true" autostart="false" controls crossorigin poster="https://media-gallery.vercel.app/thumbnails/sheep.jpg">Your browser does not support the video tag.</video>
+    </div>
+    <div class="video-wrapper">
+      <video preload="none" id="cow" muted="true" autostart="false" controls crossorigin poster="https://media-gallery.vercel.app/thumbnails/cow.jpg">Your browser does not support the video tag.</video>
+    </div>
+    <div class="video-wrapper">
+      <video preload="none" id="skyscraper" muted="true" autostart="false" controls crossorigin poster="https://media-gallery.vercel.app/thumbnails/syscraper.jpg">Your browser does not support the video tag.</video>
+    </div>
+    <div class="video-wrapper">
+      <video preload="none" id="disc" muted="true" autostart="false" controls crossorigin poster="https://media-gallery.vercel.app/thumbnails/disc.jpg">Your browser does not support the video tag.</video>
+    </div>
+    <div class="video-wrapper">
+      <video preload="none" id="puppies" muted="true" autostart="false" controls crossorigin poster="https://media-gallery.vercel.app/thumbnails/puppies.jpg">Your browser does not support the video tag.</video>
+    </div>
+    <div class="video-wrapper">
+      <video preload="none" id="waves" muted="true" autostart="false" controls crossorigin poster="https://media-gallery.vercel.app/thumbnails/waves.jpg">Your browser does not support the video tag.</video>
+    </div>
+    <div class="video-wrapper">
+      <video preload="none" id="koala" muted="true" autostart="false" controls crossorigin poster="https://media-gallery.vercel.app/thumbnails/koala.jpg">Your browser does not support the video tag.</video>
+    </div>
+    <div class="video-wrapper">
+      <video preload="none" id="fountain" muted="true" autostart="false" controls crossorigin poster="https://media-gallery.vercel.app/thumbnails/fountain.jpg">Your browser does not support the video tag.</video>
+    </div>
+    <div class="video-wrapper">
+      <video preload="none" id="lemon" muted="true" autostart="false" controls crossorigin poster="https://media-gallery.vercel.app/thumbnails/lemon.jpg">Your browser does not support the video tag.</video>
+    </div>
+    <div class="video-wrapper">
+      <video preload="none" id="ink" muted="true" autostart="false" controls crossorigin poster="https://media-gallery.vercel.app/thumbnails/ink.jpg">Your browser does not support the video tag.</video>
+    </div>
+    <div class="video-wrapper">
+      <video preload="none" id="dolby" muted="true" autostart="false" controls crossorigin poster="https://media-gallery.vercel.app/thumbnails/dolby.jpg">Your browser does not support the video tag.</video>
+    </div>
+    <div class="video-wrapper">
+      <video preload="none" id="meditation" muted="true" autostart="false" controls crossorigin poster="https://media-gallery.vercel.app/thumbnails/meditation.jpg">Your browser does not support the video tag.</video>
+    </div>
+    <div class="video-wrapper">
+      <video preload="none" id="retro" muted="true" autostart="false" controls crossorigin poster="https://media-gallery.vercel.app/thumbnails/retro.jpg">Your browser does not support the video tag.</video>
+    </div>
+    <div class="video-wrapper">
+      <video preload="none" id="river" muted="true" autostart="false" controls crossorigin poster="https://media-gallery.vercel.app/thumbnails/river.jpg">Your browser does not support the video tag.</video>
+    </div>
+    <div class="video-wrapper">
+      <video preload="none" id="tearsofsteel" muted="true" autostart="false" controls crossorigin poster="https://media-gallery.vercel.app/thumbnails/tearsofsteel.jpg">Your browser does not support the video tag.</video>
+    </div>
+    <div class="video-wrapper">
+      <video preload="none" id="bunny" muted="true" autostart="false" controls crossorigin poster="https://media-gallery.vercel.app/thumbnails/bunny.jpg">Your browser does not support the video tag.</video>
+    </div>
+    <!--Import Scripts-->
+    <script src="https://cdn.plyr.io/3.6.9/plyr.js"></script>
+    <script src="https://cdn.jsdelivr.net/hls.js/latest/hls.js"></script>
+    <!--Initialize Plyr-->
+    <script>
+      const players = Plyr.setup('video');
+      window.players = players;
+    </script>
+    <!--Video HLS Video Load Scripts-->
+    <script>
+      (function() {
+        var video = document.querySelector('#lake');
+        if (Hls.isSupported()) {
+          var hls = new Hls();
+          hls.loadSource('https://media-gallery.vercel.app/hls/lake/lake.m3u8');
+          hls.attachMedia(video);
+          hls.on(Hls.Events.MANIFEST_PARSED, function() {
+            video.play();
+          });
+        }
+        plyr.setup(video);
+      })();
+    </script>
+    <script>
+      (function() {
+        var video = document.querySelector('#sheep');
+        if (Hls.isSupported()) {
+          var hls = new Hls();
+          hls.loadSource('https://media-gallery.vercel.app/hls/sheep/sheep.m3u8');
+          hls.attachMedia(video);
+          hls.on(Hls.Events.MANIFEST_PARSED, function() {
+            video.play();
+          });
+        }
+        plyr.setup(video);
+      })();
+    </script>
+    <script>
+      (function() {
+        var video = document.querySelector('#cow');
+        if (Hls.isSupported()) {
+          var hls = new Hls();
+          hls.loadSource('https://media-gallery.vercel.app/hls/cow/cow.m3u8');
+          hls.attachMedia(video);
+          hls.on(Hls.Events.MANIFEST_PARSED, function() {
+            video.play();
+          });
+        }
+        plyr.setup(video);
+      })();
+    </script>
+    <script>
+      (function() {
+        var video = document.querySelector('#skyscraper');
+        if (Hls.isSupported()) {
+          var hls = new Hls();
+          hls.loadSource('https://media-gallery.vercel.app/hls/skyscraper/skyscraper.m3u8');
+          hls.attachMedia(video);
+          hls.on(Hls.Events.MANIFEST_PARSED, function() {
+            video.play();
+          });
+        }
+        plyr.setup(video);
+      })();
+    </script>
+    <script>
+      (function() {
+        var video = document.querySelector('#disc');
+        if (Hls.isSupported()) {
+          var hls = new Hls();
+          hls.loadSource('https://media-gallery.vercel.app/hls/disc/disc.m3u8');
+          hls.attachMedia(video);
+          hls.on(Hls.Events.MANIFEST_PARSED, function() {
+            video.play();
+          });
+        }
+        plyr.setup(video);
+      })();
+    </script>
+    <script>
+      (function() {
+        var video = document.querySelector('#puppies');
+        if (Hls.isSupported()) {
+          var hls = new Hls();
+          hls.loadSource('https://media-gallery.vercel.app/hls/puppies/puppies.m3u8');
+          hls.attachMedia(video);
+          hls.on(Hls.Events.MANIFEST_PARSED, function() {
+            video.play();
+          });
+        }
+        plyr.setup(video);
+      })();
+    </script>
+    <script>
+      (function() {
+        var video = document.querySelector('#waves');
+        if (Hls.isSupported()) {
+          var hls = new Hls();
+          hls.loadSource('https://media-gallery.vercel.app/hls/waves/waves.m3u8');
+          hls.attachMedia(video);
+          hls.on(Hls.Events.MANIFEST_PARSED, function() {
+            video.play();
+          });
+        }
+        plyr.setup(video);
+      })();
+    </script>
+    <script>
+      (function() {
+        var video = document.querySelector('#koala');
+        if (Hls.isSupported()) {
+          var hls = new Hls();
+          hls.loadSource('https://media-gallery.vercel.app/hls/koala/koala.m3u8');
+          hls.attachMedia(video);
+          hls.on(Hls.Events.MANIFEST_PARSED, function() {
+            video.play();
+          });
+        }
+        plyr.setup(video);
+      })();
+    </script>
+    <script>
+      (function() {
+        var video = document.querySelector('#fountain');
+        if (Hls.isSupported()) {
+          var hls = new Hls();
+          hls.loadSource('https://media-gallery.vercel.app/hls/fountain/fountain.m3u8');
+          hls.attachMedia(video);
+          hls.on(Hls.Events.MANIFEST_PARSED, function() {
+            video.play();
+          });
+        }
+        plyr.setup(video);
+      })();
+    </script>
+    <script>
+      (function() {
+        var video = document.querySelector('#lemon');
+        if (Hls.isSupported()) {
+          var hls = new Hls();
+          hls.loadSource('https://media-gallery.vercel.app/hls/lemon/lemon.m3u8');
+          hls.attachMedia(video);
+          hls.on(Hls.Events.MANIFEST_PARSED, function() {
+            video.play();
+          });
+        }
+        plyr.setup(video);
+      })();
+    </script>
+    <script>
+      (function() {
+        var video = document.querySelector('#ink');
+        if (Hls.isSupported()) {
+          var hls = new Hls();
+          hls.loadSource('https://media-gallery.vercel.app/hls/ink/ink.m3u8');
+          hls.attachMedia(video);
+          hls.on(Hls.Events.MANIFEST_PARSED, function() {
+            video.play();
+          });
+        }
+        plyr.setup(video);
+      })();
+    </script>
+    <script>
+      (function() {
+        var video = document.querySelector('#dolby');
+        if (Hls.isSupported()) {
+          var hls = new Hls();
+          hls.loadSource('https://media-gallery.vercel.app/hls/dolby/dolby.m3u8');
+          hls.attachMedia(video);
+          hls.on(Hls.Events.MANIFEST_PARSED, function() {
+            video.play();
+          });
+        }
+        plyr.setup(video);
+      })();
+    </script>
+    <script>
+      (function() {
+        var video = document.querySelector('#meditation');
+        if (Hls.isSupported()) {
+          var hls = new Hls();
+          hls.loadSource('https://media-gallery.vercel.app/hls/meditation/meditation.m3u8');
+          hls.attachMedia(video);
+          hls.on(Hls.Events.MANIFEST_PARSED, function() {
+            video.play();
+          });
+        }
+        plyr.setup(video);
+      })();
+    </script>
+    <script>
+      (function() {
+        var video = document.querySelector('#retro');
+        if (Hls.isSupported()) {
+          var hls = new Hls();
+          hls.loadSource('https://media-gallery.vercel.app/hls/retro/retro.m3u8');
+          hls.attachMedia(video);
+          hls.on(Hls.Events.MANIFEST_PARSED, function() {
+            video.play();
+          });
+        }
+        plyr.setup(video);
+      })();
+    </script>
+    <script>
+      (function() {
+        var video = document.querySelector('#river');
+        if (Hls.isSupported()) {
+          var hls = new Hls();
+          hls.loadSource('https://media-gallery.vercel.app/hls/river/river.m3u8');
+          hls.attachMedia(video);
+          hls.on(Hls.Events.MANIFEST_PARSED, function() {
+            video.play();
+          });
+        }
+        plyr.setup(video);
+      })();
+    </script>
+    <script>
+      (function() {
+        var video = document.querySelector('#tearsofsteel');
+        if (Hls.isSupported()) {
+          var hls = new Hls();
+          hls.loadSource('https://content.jwplatform.com/manifests/vM7nH0Kl.m3u8');
+          hls.attachMedia(video);
+          hls.on(Hls.Events.MANIFEST_PARSED, function() {
+            video.play();
+          });
+        }
+        plyr.setup(video);
+      })();
+    </script>
+    <script>
+      (function() {
+        var video = document.querySelector('#bunny');
+        if (Hls.isSupported()) {
+          var hls = new Hls();
+          hls.loadSource('https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8');
+          hls.attachMedia(video);
+          hls.on(Hls.Events.MANIFEST_PARSED, function() {
+            video.play();
+          });
+        }
+        plyr.setup(video);
+      })();
+    </script>
+  </body>
+</html>
